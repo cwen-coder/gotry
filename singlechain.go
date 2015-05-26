@@ -85,8 +85,8 @@ func Insert(h *Node, a Node) {
 func Merge(h *Node, t *Node) *Node {
 	p := t.Next
 	for p.Next != nil {
-		p = p.Next
 		Insert(h, *p)
+		p = p.Next
 	}
 	return h
 }
@@ -139,5 +139,7 @@ func main() {
 	PrintList(&List2)
 	fmt.Println("表一与表二合并为：")
 	h := Merge(&List1, &List2)
+	//fmt.Println(h)
 	PrintList(h)
+
 }
